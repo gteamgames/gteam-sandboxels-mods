@@ -11,7 +11,7 @@ elements.gteam_asteroid = {
         // check pixel below
         var below = pixelMap[pixel.x]?.[pixel.y + 1];
 
-        if (below && below.element !== "air") {
+        if (below && elements[below.element].state !== "gas") {
             explodeAt(pixel.x, pixel.y, 12);
             deletePixel(pixel.x, pixel.y);
         }
